@@ -27,4 +27,4 @@ define(LANG,"esp"); //define your default language
 ?>
 <p><?php echo $lang['common']['close'][LANG]; ?>"/p>
 <br>
-<p></p><?php echo stringLang('common','home'); ?></p>
+<p><?php echo stringLang('common','home'); ?></p>
