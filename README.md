@@ -1,12 +1,12 @@
 
 <p>You can call any string from the array like so in a simple echo</p>
-<p>`<?php echo $lang['common']['close'][LANG]; ?>` which returns "Cerca"</p>
+<p>`&lt;?php echo $lang['common']['close'][LANG]; ?&gt;` which returns "Cerca"</p>
 <p> The function for this is `$lang[StringSetToUse][WordToTranslate][LANGorTheLanguageYouPrefer];`
 <br>
 <br>
 <p>I included a function to call the language. not much different or easier, but lets put the FUN back in function</p>
 
-<p>Just use this code here `<?php echo stringLang('common','home'); ?>` and it will return "Casa" </p>
+<p>Just use this code here `&lt;?php echo stringLang('common','home'); ?&gt;` and it will return "Casa" </p>
 <p> The function for this is <code>stringLang(StringSetToUse,WordToTranslate,LanguageIfNotDefault);</code>
 
 <p>Below is the array structure and the function setup</p>
@@ -31,4 +31,4 @@
 		$str = $lang[$cat][$word][$language];
 		return $str;		
 	}
-	```
+
