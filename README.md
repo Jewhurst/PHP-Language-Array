@@ -13,24 +13,40 @@
 <p>
 <code>	
 	global $lang;<br>
+	
 	$lang = array (<br>
+	
 					&nbsp;	&nbsp;$common => array(<br>
+					
 						&nbsp;	 &nbsp;&nbsp; $menu => array("eng"=>"Menu","esp"=>"Menú"),<br>
+						
 						&nbsp;	&nbsp;&nbsp;  $close  => array("eng"=>"Close","esp"=>"Cerca"),<br>
+						
 						&nbsp;	&nbsp;&nbsp;  $home => array("eng"=>"Home","esp"=>"Casa")<br>
+						
 						&nbsp;&nbsp;),<br>
+						
 						&nbsp;&nbsp;$search => array(<br>
+						
 						&nbsp;&nbsp;&nbsp;	$submit => array("eng"=>"Submit","esp"=>"Enviar"),<br>
+						
 						&nbsp;&nbsp;&nbsp;	$notfound => array("eng"=>"Item not found","esp"=>"Objeto no encontrado")<br>
+						
 					&nbsp;&nbsp;	)	<br>
+					
 	);<br>
+	
 	<br>
 	<br><br>
 	<br>
 	function stringLang($cat,$word,$language = LANG) {<br>
+	
 		&nbsp;&nbsp;&nbsp;global $lang;<br>
+		
 		&nbsp;&nbsp;&nbsp;$str = $lang[$cat][$word][$language];<br>
+		
 		&nbsp;&nbsp;&nbsp;return $str;		<br>
+		
 	}<br>
 	</code>
 	</p>
