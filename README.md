@@ -1,52 +1,34 @@
 
 <p>You can call any string from the array like so in a simple echo</p>
-<p><code>&lt;?php echo $lang[$common][$close][LANG]; ?&gt;</code> which returns "<?php echo $lang[$common][$close][LANG]; ?>"</p>
-<p> The function for this is <code>$lang[StringSetToUse][WordToTranslate][LANGorTheLanguageYouPrefer];</code>
+<p>`<?php echo $lang['common']['close'][LANG]; ?>` which returns "Cerca"</p>
+<p> The function for this is `$lang[StringSetToUse][WordToTranslate][LANGorTheLanguageYouPrefer];`
 <br>
 <br>
 <p>I included a function to call the language. not much different or easier, but lets put the FUN back in function</p>
 
-<p>Just use this code here <code>&lt;?php echo stringLang($common,$menu); ?&gt;</code> and it will return "<?php echo stringLang($common,$menu); ?>" </p>
+<p>Just use this code here `<?php echo stringLang('common','home'); ?>` and it will return "Casa" </p>
 <p> The function for this is <code>stringLang(StringSetToUse,WordToTranslate,LanguageIfNotDefault);</code>
 
 <p>Below is the array structure and the function setup</p>
 <p>
-<code>	
-	global $lang;<br>
+```
+	global $lang;
+	$lang = array (
+						"common" => array(
+							  "menu" => array("eng"=>"Menu","esp"=>"Menú"),
+							  "close"  => array("eng"=>"Close","esp"=>"Cerca"),
+							  "home" => array("eng"=>"Home","esp"=>"Casa")
+						),
+						"search" => array(
+							"submit" => array("eng"=>"Submit","esp"=>"Enviar"),
+							"notfound" => array("eng"=>"Item not found","esp"=>"Objeto no encontrado")
+						)	
+	);
 	
-	$lang = array (<br>
-	
-					&nbsp;	&nbsp;$common => array(<br>
-					
-						&nbsp;	 &nbsp;&nbsp; $menu => array("eng"=>"Menu","esp"=>"Menú"),<br>
-						
-						&nbsp;	&nbsp;&nbsp;  $close  => array("eng"=>"Close","esp"=>"Cerca"),<br>
-						
-						&nbsp;	&nbsp;&nbsp;  $home => array("eng"=>"Home","esp"=>"Casa")<br>
-						
-						&nbsp;&nbsp;),<br>
-						
-						&nbsp;&nbsp;$search => array(<br>
-						
-						&nbsp;&nbsp;&nbsp;	$submit => array("eng"=>"Submit","esp"=>"Enviar"),<br>
-						
-						&nbsp;&nbsp;&nbsp;	$notfound => array("eng"=>"Item not found","esp"=>"Objeto no encontrado")<br>
-						
-					&nbsp;&nbsp;	)	<br>
-					
-	);<br>
-	
-	<br>
-	<br><br>
-	<br>
-	function stringLang($cat,$word,$language = LANG) {<br>
-	
-		&nbsp;&nbsp;&nbsp;global $lang;<br>
-		
-		&nbsp;&nbsp;&nbsp;$str = $lang[$cat][$word][$language];<br>
-		
-		&nbsp;&nbsp;&nbsp;return $str;		<br>
-		
-	}<br>
-	</code>
-	</p>
+	/* keep this with the language array, or add to your own functions file */
+	function stringLang($cat,$word,$language = LANG) {
+		global $lang;
+		$str = $lang[$cat][$word][$language];
+		return $str;		
+	}
+	```
