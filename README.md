@@ -8,7 +8,8 @@
 
 <p>Just use this code here `&lt;?php echo stringLang('common','home'); ?&gt;` and it will return "Casa" </p>
 <p> The function for this is <code>stringLang(StringSetToUse,WordToTranslate,LanguageIfNotDefault);</code>
-
+<p>Define your language globally, so put this somewhere global</p>
+`define(LANG,"esp"); `
 <p>Below is the array structure and the function setup</p>
 <p>
 ```
