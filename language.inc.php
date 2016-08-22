@@ -15,7 +15,11 @@ define(LANG,"esp"); //define your default language
 						"search" => array(
 							"submit" => array("eng"=>"Submit","esp"=>"Enviar"),
 							"notfound" => array("eng"=>"Item not found","esp"=>"Objeto no encontrado"),
-						)	
+						),
+						"menu" => array(
+							"home" => array("eng"=>"Home","link"=>"index.php"),
+							"blog"=> array("eng"=>"Blogs","link"=>"blogs.php","linkGET"=>"blogs.php?id=")
+						)
 	);
 	
 	/* keep this with the language array, or add to your own functions file */
